@@ -27,48 +27,20 @@
           </div>
           <h2 class="text-[#191011] text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-12">Notifications</h2>
         </div>
-        <h3 class="text-[#191011] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Today</h3>
+        <h3 class="text-[#191011] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Prossimi appuntamenti</h3>
+        {% for b in bookings %}
         <div class="flex items-center gap-4 bg-[#fbf9f9] px-4 min-h-[72px] py-2">
-          <div class="text-[#191011] flex items-center justify-center rounded-lg bg-[#f1e9ea] shrink-0 size-12" data-icon="Calendar" data-size="24px" data-weight="regular">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-              <path
-                d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM72,48v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24V80H48V48ZM208,208H48V96H208V208Zm-96-88v64a8,8,0,0,1-16,0V132.94l-4.42,2.22a8,8,0,0,1-7.16-14.32l16-8A8,8,0,0,1,112,120Zm59.16,30.45L152,176h16a8,8,0,0,1,0,16H136a8,8,0,0,1-6.4-12.8l28.78-38.37A8,8,0,1,0,145.07,132a8,8,0,1,1-13.85-8A24,24,0,0,1,176,136,23.76,23.76,0,0,1,171.16,150.45Z"
-              ></path>
-            </svg>
+          <div class="text-[#191011] flex items-center justify-center rounded-lg bg-[#f1e9ea] shrink-0 size-12">
+            <span>{{ b['service'] }}</span>
           </div>
           <div class="flex flex-col justify-center">
-            <p class="text-[#191011] text-base font-medium leading-normal line-clamp-1">Upcoming appointment</p>
-            <p class="text-[#8b5b5d] text-sm font-normal leading-normal line-clamp-2">Tomorrow at 10:00 AM</p>
+            <p class="text-[#191011] text-base font-medium leading-normal line-clamp-1">{{ b['date'] }} {{ b['time'] }}</p>
+            <p class="text-[#8b5b5d] text-sm font-normal leading-normal line-clamp-2">{{ b['stylist'] }}</p>
           </div>
         </div>
-        <h3 class="text-[#191011] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">This week</h3>
-        <div class="flex items-center gap-4 bg-[#fbf9f9] px-4 min-h-[72px] py-2">
-          <div class="text-[#191011] flex items-center justify-center rounded-lg bg-[#f1e9ea] shrink-0 size-12" data-icon="Gift" data-size="24px" data-weight="regular">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-              <path
-                d="M216,72H180.92c.39-.33.79-.65,1.17-1A29.53,29.53,0,0,0,192,49.57,32.62,32.62,0,0,0,158.44,16,29.53,29.53,0,0,0,137,25.91a54.94,54.94,0,0,0-9,14.48,54.94,54.94,0,0,0-9-14.48A29.53,29.53,0,0,0,97.56,16,32.62,32.62,0,0,0,64,49.57,29.53,29.53,0,0,0,73.91,71c.38.33.78.65,1.17,1H40A16,16,0,0,0,24,88v32a16,16,0,0,0,16,16v64a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V136a16,16,0,0,0,16-16V88A16,16,0,0,0,216,72ZM149,36.51a13.69,13.69,0,0,1,10-4.5h.49A16.62,16.62,0,0,1,176,49.08a13.69,13.69,0,0,1-4.5,10c-9.49,8.4-25.24,11.36-35,12.4C137.7,60.89,141,45.5,149,36.51Zm-64.09.36A16.63,16.63,0,0,1,96.59,32h.49a13.69,13.69,0,0,1,10,4.5c8.39,9.48,11.35,25.2,12.39,34.92-9.72-1-25.44-4-34.92-12.39a13.69,13.69,0,0,1-4.5-10A16.6,16.6,0,0,1,84.87,36.87ZM40,88h80v32H40Zm16,48h64v64H56Zm144,64H136V136h64Zm16-80H136V88h80v32Z"
-              ></path>
-            </svg>
-          </div>
-          <div class="flex flex-col justify-center">
-            <p class="text-[#191011] text-base font-medium leading-normal line-clamp-1">Special promotion</p>
-            <p class="text-[#8b5b5d] text-sm font-normal leading-normal line-clamp-2">Offer valid until 07/15</p>
-          </div>
-        </div>
-        <h3 class="text-[#191011] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">News</h3>
-        <div class="flex items-center gap-4 bg-[#fbf9f9] px-4 min-h-[72px] py-2">
-          <div class="text-[#191011] flex items-center justify-center rounded-lg bg-[#f1e9ea] shrink-0 size-12" data-icon="Bell" data-size="24px" data-weight="regular">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-              <path
-                d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216ZM48,184c7.7-13.24,16-43.92,16-80a64,64,0,1,1,128,0c0,36.05,8.28,66.73,16,80Z"
-              ></path>
-            </svg>
-          </div>
-          <div class="flex flex-col justify-center">
-            <p class="text-[#191011] text-base font-medium leading-normal line-clamp-1">Product arrival</p>
-            <p class="text-[#8b5b5d] text-sm font-normal leading-normal line-clamp-2">New products available</p>
-          </div>
-        </div>
+        {% else %}
+        <p class="px-4">Nessun appuntamento</p>
+        {% endfor %}
       </div>
       <div>
         <div class="flex gap-2 border-t border-[#f1e9ea] bg-[#fbf9f9] px-4 pb-3 pt-2">

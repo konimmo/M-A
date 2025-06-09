@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Profilo - M&A</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <h2>Profilo</h2>
+    <p>Benvenuto {{ user['name'] }}</p>
+    <h3>I tuoi appuntamenti</h3>
+    <ul>
+        {% for b in bookings %}
+        <li>{{ b['date'] }} {{ b['time'] }} - {{ b['service'] }} con {{ b['stylist'] }}</li>
+        {% else %}
+        <li>Nessuna prenotazione</li>
+        {% endfor %}
+    </ul>
+    <p><a href="{{ url_for('logout') }}">Logout</a></p>
+</div>
+</body>
+</html>
