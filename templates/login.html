@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login - M&A</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Login</h2>
+        {% if error %}<p class="error">{{ error }}</p>{% endif %}
+        <form method="post">
+            <label>Email</label>
+            <input type="email" name="email" required>
+            <label>Password</label>
+            <input type="password" name="password" required>
+            <button type="submit">Login</button>
+        </form>
+        <p>Non hai un account? <a href="{{ url_for('register') }}">Registrati</a></p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+CREATE TABLE IF NOT EXISTS user (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL,
+    email TEXT UNIQUE NOT NULL,
+    password TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS booking (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER NOT NULL,
+    service TEXT NOT NULL,
+    stylist TEXT NOT NULL,
+    date TEXT NOT NULL,
+    time TEXT NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES user(id)
+);

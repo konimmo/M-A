@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prenotazione - M&A</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <h2>Prenota un servizio</h2>
+    <form method="post">
+        <label>Servizio</label>
+        <select name="service" required>
+            <option value="Piega">Piega</option>
+            <option value="Taglio">Taglio</option>
+            <option value="Colore">Colore</option>
+            <option value="Trattamento">Trattamento</option>
+        </select>
+        <label>Stilista</label>
+        <select name="stylist" required>
+            <option>Giulia</option>
+            <option>Martina</option>
+            <option>Chiara</option>
+        </select>
+        <label>Data</label>
+        <input type="date" name="date" required>
+        <label>Orario</label>
+        <input type="time" name="time" required>
+        <button type="submit">Prenota</button>
+    </form>
+</div>
+</body>
+</html>
